@@ -28,9 +28,6 @@ Following endpoints will be exposed:
 
 # Examples
 **Example 1:** GET /api/seat
-
-Response status code 200 (OK)</br>
-Response body:
 ```
 {
     "rows": 9,
@@ -60,17 +57,16 @@ Response body:
     ]
 }
 ```
-**Example 2:** POST /api/purchase
+Status code: 200 (OK)
 
-Request body:
+**Example 2:** POST /api/purchase
 ```
 {
     "row": 1,
     "column": 1
 }
 ```
-Response status code 200 (OK)</br>
-Response body:
+Status code: 200 (OK)
 ```
 {
     "token": "5115505f-c2a7-4407-8670-77abc5390957",
@@ -84,61 +80,49 @@ Response body:
 }
 ```
 **Example 3:** POST /api/purchase
-
-Request body (book same ticket again):
 ```
 {
     "row": 1,
     "column": 1
 }
 ```
-Response status code 400 (Bad Request)</br>
-Response body:
+Status code: 400 (Bad Request)
 ```
 {
     "error": "The seat has been already purchased!"
 }
 ```
 **Example 4:** POST /api/return
-
-Request body (wrong token key):
 ```
 {
     "token_XYZ": "5115505f-c2a7-4407-8670-77abc5390957"
 }
 ```
-Response status code 400 (Bad Request)</br>
-Response body:
+Status code: 400 (Bad Request)
 ```
 {
 	"error": "The token key or value is wrong!"
 }
 ```
 **Example 5:** POST /api/return
-
-Request body (wrong token value):
 ```
 {
     "token": "5115505f-c2a7-4407-8670-77abc5390957_XYZ"
 }
 ```
-Response status code 400 (Bad Request)</br>
-Response body:
+Status code: 400 (Bad Request)
 ```
 {
 	"error": "The token key or value is wrong!"
 }
 ```
 **Example 6:** POST /api/return
-
-Request body (correct token):
 ```
 {
     "token": "5115505f-c2a7-4407-8670-77abc5390957"
 }
 ```
-Response status code 200 (OK)</br>
-Response body:
+Status code 200 (OK)
 ```
 {
     "returned_seats": [
@@ -150,28 +134,23 @@ Response body:
     ]
 }
 ```
-**Example 7:** GET /api/stats?password_xyz=super_secret (wrong query param name):
-
-Response status code 400 (Bad Request)</br>
-Response body:
+**Example 7:** GET /api/stats?password_xyz=super_secret
 ```
 {
 	"error": "Missing query parameter password!"
 }
 ```
-**Example 8:** GET /api/stats?password=super_secret_xyz (wrong query param value):
+Status code: 400 (Bad Request)
 
-Response status code 401 (Unauthorized)</br>
-Response body:
+**Example 8:** GET /api/stats?password=super_secret_xyz
 ```
 {
 	"error": "The password value is wrong!"
 }
 ```
-**Example 8:** GET /api/stats?password=super_secret (correct query param):
+Status code: 401 (Unauthorized)
 
-Response status code 200 (OK)</br>
-Response body:
+**Example 8:** GET /api/stats?password=super_secret
 ```
 {
 	"current_income": 10,
@@ -179,6 +158,7 @@ Response body:
 	"sold_tickets": 1
 }
 ```
+Status code: 200 (OK)
 
 # Licence
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
