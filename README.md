@@ -16,15 +16,15 @@ Service use authorization based on URL parameters.
 Navigate to the project root directory and run **./gradlew bootRun**
 
 # Exposed endpoints:
-By default, service will run on **http://localhost:28852/** <br/>
+By default, service will run on **http://localhost:28852** <br/>
 Following endpoints will be exposed:
 
 | Methods | Urls                            | Actions                                 |
 |---------|---------------------------------|-----------------------------------------|
-| GET     | api/seats                       | Show all available seats                |
-| GET     | api/stats?password=super_secret | Show statistics                         |
-| POST    | api/purchase                    | Book a seat                             |
-| POST    | api/return                      | Return booked seat                      |
+| GET     | /api/seats                       | Show all available seats                |
+| GET     | /api/stats?password=super_secret | Show statistics                         |
+| POST    | /api/purchase                    | Book a seat                             |
+| POST    | /api/return                      | Return booked seat                      |
 
 # Examples
 **Example 1:** GET /api/seat
