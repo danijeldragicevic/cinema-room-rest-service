@@ -27,7 +27,7 @@ Following endpoints will be exposed:
 | POST    | api/return                      | Return booked seat                      |
 
 # Examples
-**Example 1:** GET /api/seat
+**Example 1:** GET /api/seats
 ```
 {
     "rows": 9,
